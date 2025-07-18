@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    .login-box{
+        width: 900px;
+        height: 450px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+         box-shadow: 3px 10px 15px rgba(0, 0, 0,0.4);
+    }
+    .login-box h1{
+     padding-top: 100px;
+     text-align: center;
+     text-transform: capitalize;
+     padding-bottom: 30px;
+    }
+    .login-box input{
+        width: 500px;
+        height: 50px;
+        padding-left: 20px;
+        margin-left: 160px;
+        margin-bottom: 30px;
+    }
+    .login-box button{
+        width: 200px;
+        height: 50px;
+        margin-left: 160px;
+        background-color: green;
+        color: white;
+        font-size: 15px;
+        border: 1px solid black;
+       
+    }
+    #message , #emsg{
+        color: red;
+        margin-left: 160px;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
+</style>
+<body>
+    <div class="login-box">
+        <h1>login form testing</h1>
+        <input type="text" placeholder="email" id="email">
+        <span id="emsg"></span>
+        <input type="password" placeholder="password" id="password">
+       <span id="message"></span> 
+        <button onclick="Login()">Login</button>
+    </div>
+</body>
+<script>
+    function Login(){
+        const email = document.getElementById("email").value;
+        email.trim();
+        const password = document.getElementById("password").value;
+        password.trim()
+        const message = document.getElementById("message")
+        const emsg = document.getElementById("emsg");
+
+        const valid_email = "abc@gmail.com";
+        const valid_password = "test@123";
+        
+        if(email === valid_email && password()===valid_password){
+              message.innerText = "Login Succesfull"
+              message.style.color = "green"
+        }
+    }
+</script>
+</html>
